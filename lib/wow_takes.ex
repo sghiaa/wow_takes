@@ -7,33 +7,33 @@ defmodule WowTakes do
   if it comes from the database, an external API or others.
   """
   def format() do
-    Enum.at(formats, Enum.random(0..length(formats) - 1))
+    Enum.at(formats(), Enum.random(0..length(formats()) - 1))
   end
 
   def topic() do
-    topics = specs ++ expansions ++ dungeons ++ systems
+    topics = specs() ++ expansions() ++ dungeons() ++ systems()
     Enum.at(topics, Enum.random(0..length(topics) - 1))
   end
   def spec() do
-    Enum.at(specs, Enum.random(0..length(specs) - 1))
+    Enum.at(specs(), Enum.random(0..length(specs()) - 1))
   end
   def expansion() do
-    Enum.at(expansions, Enum.random(0..length(expansions) - 1))
+    Enum.at(expansions(), Enum.random(0..length(expansions()) - 1))
   end
   def dungeon() do
-    Enum.at(dungeons, Enum.random(0..length(dungeons) - 1))
+    Enum.at(dungeons(), Enum.random(0..length(dungeons()) - 1))
   end
   def system() do
-    Enum.at(systems, Enum.random(0..length(systems) - 1))
+    Enum.at(systems(), Enum.random(0..length(systems()) - 1))
   end
   def old_dungeon() do
-    Enum.at(old_dungeons, Enum.random(0..length(old_dungeons) - 1))
+    Enum.at(old_dungeons(), Enum.random(0..length(old_dungeons()) - 1))
   end
   def subjective_value() do
-    Enum.at(subjective_values, Enum.random(0..length(subjective_values) - 1))
+    Enum.at(subjective_values(), Enum.random(0..length(subjective_values()) - 1))
   end
   def buff_nerf() do
-    Enum.at(buff_nerfs, Enum.random(0..length(buff_nerfs) - 1))
+    Enum.at(buff_nerfs(), Enum.random(0..length(buff_nerfs()) - 1))
   end
 
   def translate(:havoc_dh), do: "havoc"
