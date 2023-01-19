@@ -17,3 +17,11 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+
+## Deployment
+
+Hosted on gigalixir.
+1. commit your code
+2. `git push gigalixir`
+3. after a minute the changes should be visible on wow-takes.gigalixir.com
