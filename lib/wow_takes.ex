@@ -12,28 +12,40 @@ defmodule WowTakes do
 
   def topic() do
     topics = specs() ++ expansions() ++ dungeons() ++ systems()
-    Enum.at(topics, Enum.random(0..length(topics) - 1))
+    translate(Enum.at(topics, Enum.random(0..length(topics) - 1)))
   end
   def spec() do
-    Enum.at(specs(), Enum.random(0..length(specs()) - 1))
+    translate(Enum.at(specs(), Enum.random(0..length(specs()) - 1)))
+  end
+  def tank() do
+    translate(Enum.at(tanks(), Enum.random(0..length(tanks()) - 1)))
+  end
+  def healer() do
+    translate(Enum.at(healers(), Enum.random(0..length(healers()) - 1)))
+  end
+  def dps() do
+    translate(Enum.at(dpses(), Enum.random(0..length(dpses()) - 1)))
   end
   def expansion() do
-    Enum.at(expansions(), Enum.random(0..length(expansions()) - 1))
+    translate(Enum.at(expansions(), Enum.random(0..length(expansions()) - 1)))
   end
   def dungeon() do
-    Enum.at(dungeons(), Enum.random(0..length(dungeons()) - 1))
+    translate(Enum.at(dungeons(), Enum.random(0..length(dungeons()) - 1)))
+  end
+  def raid() do
+    translate(Enum.at(raids(), Enum.random(0..length(raids()) - 1)))
   end
   def system() do
-    Enum.at(systems(), Enum.random(0..length(systems()) - 1))
+    translate(Enum.at(systems(), Enum.random(0..length(systems()) - 1)))
   end
   def old_dungeon() do
-    Enum.at(old_dungeons(), Enum.random(0..length(old_dungeons()) - 1))
+    translate(Enum.at(old_dungeons(), Enum.random(0..length(old_dungeons()) - 1)))
   end
   def subjective_value() do
-    Enum.at(subjective_values(), Enum.random(0..length(subjective_values()) - 1))
+    translate(Enum.at(subjective_values(), Enum.random(0..length(subjective_values()) - 1)))
   end
   def buff_nerf() do
-    Enum.at(buff_nerfs(), Enum.random(0..length(buff_nerfs()) - 1))
+    translate(Enum.at(buff_nerfs(), Enum.random(0..length(buff_nerfs()) - 1)))
   end
 
   def translate(:havoc_dh), do: "havoc"
@@ -71,6 +83,9 @@ defmodule WowTakes do
   def translate(:blood_deathknight), do: "bdk"
   def translate(:unholy_deathknight), do: "unholy"
   def translate(:frost_deathknight), do: "frost dk"
+  def translate(:windwalker), do: "windwalker"
+  def translate(:mistweaver), do: "mistweaver"
+  def translate(:brewmaster), do: "brewmaster"
   def translate(:shadowmoon_burial_grounds), do: "smbg"
   def translate(:temple_of_the_jade_serpant), do: "totjs"
   def translate(:court_of_stars), do: "cos"
@@ -121,6 +136,164 @@ defmodule WowTakes do
   def translate(:nerf), do: "nerf"
   def translate(:gigabuff), do: "gigabuff"
   def translate(:giganerf), do: "giganerf"
+  def translate(:vault_of_the_incarnates), do: "voti"
+  def translate(:antorus), do: "antorus"
+  def translate(:nighthold), do: "nighthold"
+  def translate(:tomb_of_sargaras), do: "tomb"
+  def translate(:battle_of_dazaralor), do: "bod"
+  def translate(:firelands), do: "firelands"
+  def translate(:nyalotha), do: "nyalotha"
+  def translate(:emerald_nightmare), do: "en"
+  def translate(:hellfire_citadel), do: "hfc"
+  def translate(:blackrock_foundry), do: "brf"
+  def translate(:sanctum_of_domination), do: "sod"
+  def translate(:naxxramas_wotlk), do: "wotlk naxx"
+  def translate(:naxxramas_vanilla), do: "vanilla naxx"
+  def translate(:ulduar), do: "ulduar"
+  def translate(:sepulcher), do: "sofo"
+  def translate(:throne_of_thunder), do: "tot"
+  def translate(:siege_of_org), do: "soo"
+  def translate(:dragon_soul), do: "ds"
+  def translate(:karazhan), do: "kara"
+  def translate(:molten_core), do: "mc"
+  def translate(:blackwing_lair), do: "bwl"
+  def translate(:trial_of_valor), do: "tov"
+  def translate(:uldir), do: "uldir"
+  def translate(:mogushan_vaults), do: "mogushan vaults"
+  def translate(:bastion_of_twilight), do: "bastion of twilight"
+  def translate(:eternal_palance), do: "ep"
+  def translate(:temple_of_anquiraj), do: "aq40"
+  def translate(:the_eye), do: "the eye"
+  def translate(:onyxia), do: "onyxia"
+  def translate(:black_temple), do: "bt"
+  def translate(:sunwell), do: "sunwell"
+  def translate(:blackwing_descent), do: "bwd"
+  def translate(:heart_of_fear), do: "hof"
+  def translate(:castle_nathria), do: "nathria"
+  def translate(:icecrown_citadel), do: "icc"
+  def translate(:trial_of_the_crusader), do: "toc"
+  def translate(:highmaul), do: "highmaul"
+  def translate(:throne_of_four_winds), do: "totfw"
+  def translate(:terrace_of_endless_spring), do: "terrace of endless spring"
+  def translate(:serprentshrine_cavern), do: "ssc"
+  def translate(:hyjal), do: "hyjal"
+  def translate(:crucible_of_storms), do: "crucible"
+  def translate(:eye_of_eternity), do: "eoe"
+  def translate(:vault_of_archavon), do: "archavon"
+  def translate(:obsidian_sanctum), do: "os"
+  def translate(:baradin_hold), do: "bh"
+  def translate(:ruins_of_ahnquiraj), do: "aq20"
+  def translate(:gruuls_lair), do: "gruul"
+  def translate(:magtheridons_lair), do: "magtheridon"
+  def translate(:ruby_sanctum), do: "rs"
+
+  def raids do
+    [
+      :vault_of_the_incarnates,
+      :antorus,
+      :nighthold,
+      :tomb_of_sargaras,
+      :battle_of_dazaralor,
+      :firelands,
+      :nyalotha,
+      :emerald_nightmare,
+      :hellfire_citadel,
+      :blackrock_foundry,
+      :sanctum_of_domination,
+      :naxxramas_wotlk,
+      :naxxramas_vanilla,
+      :ulduar,
+      :sepulcher,
+      :throne_of_thunder,
+      :siege_of_org,
+      :dragon_soul,
+      :karazhan,
+      :molten_core,
+      :blackwing_lair,
+      :trial_of_valor,
+      :uldir,
+      :mogushan_vaults,
+      :bastion_of_twilight,
+      :eternal_palance,
+      :temple_of_anquiraj,
+      :the_eye,
+      :onyxia,
+      :black_temple,
+      :sunwell,
+      :blackwing_descent,
+      :heart_of_fear,
+      :castle_nathria,
+      :icecrown_citadel,
+      :trial_of_the_crusader,
+      :highmaul,
+      :throne_of_four_winds,
+      :terrace_of_endless_spring,
+      :serprentshrine_cavern,
+      :hyjal,
+      :crucible_of_storms,
+      :eye_of_eternity,
+      :vault_of_archavon,
+      :obsidian_sanctum,
+      :baradin_hold,
+      :ruins_of_ahnquiraj,
+      :gruuls_lair,
+      :magtheridons_lair,
+      :ruby_sanctum,
+    ]
+  end
+
+  def tanks do
+    [
+      :vengeance_dh,
+      :guardian_druid,
+      :protection_warrior,
+      :protection_paladin,
+      :blood_deathknight,
+      :brewmaster
+    ]
+  end
+
+  def dpses do
+    [
+      :havoc_dh,
+      :balance_druid,
+      :feral_druid,
+      :fury_warrior,
+      :arms_warrior,
+      :shadow_priest,
+      :devastation_evoker,
+      :destruction_warlock,
+      :affliction_warlock,
+      :demonology_warlock,
+      :assassination_rogue,
+      :subtlety_rogue,
+      :outlaw_rogue,
+      :enhancement_shaman,
+      :elemental_shaman,
+      :fire_mage,
+      :frost_mage,
+      :arcane_mage,
+      :survival_hunter,
+      :marksmanship_hunter,
+      :beastmastery_hunter,
+      :retribution_paladin,
+      :unholy_deathknight,
+      :frost_deathknight,
+      :windwalker,
+    ]
+  end
+
+  def healers do
+    [
+      :restoration_druid,
+      :discipline_priest,
+      :holy_priest,
+      :preservation_evoker,
+      :restoration_shaman,
+      :holy_paladin,
+      :mistweaver,
+    ]
+  end
 
   def specs do
     [
@@ -159,8 +332,12 @@ defmodule WowTakes do
       :blood_deathknight,
       :unholy_deathknight,
       :frost_deathknight,
+      :brewmaster,
+      :windwalker,
+      :mistweaver,
     ]
   end
+
   def dungeons do
     [
       :halls_of_valor,
@@ -251,6 +428,8 @@ defmodule WowTakes do
       :can_we_go_back_to,
       :i_used_to,
       :buff_nerf,
+      :ideal_mplus_comp,
+      :top_five_raids,
     ]
   end
 
