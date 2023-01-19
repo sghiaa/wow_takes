@@ -13,7 +13,7 @@ defmodule WowTakesWeb.PageView do
     "if loving #{translate(topic())} is wrong i dont want to be right"
   end
   def tweet(:hasnt_been_fun) do
-    "#{translate(spec())} hasnt been #{translate(subjective_value)} since #{translate(expansion())}"
+    "#{translate(spec())} hasnt been #{translate(subjective_value())} since #{translate(expansion())}"
   end
   def tweet(:was_good_actually) do
     "#{translate(system())} was #{translate(subjective_value())} actually"
@@ -22,7 +22,7 @@ defmodule WowTakesWeb.PageView do
     "i miss grinding #{translate(old_dungeon())}"
   end
   def tweet(:remember_when) do
-    "remember when #{translate(topic)} was #{translate(subjective_value)}"
+    "remember when #{translate(topic())} was #{translate(subjective_value())}"
   end
   def tweet(:can_we_go_back_to) do
     "can we go back to #{translate(expansion())}"
